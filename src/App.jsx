@@ -5,6 +5,7 @@ import CompanyProfile from './pages/about/CompanyProfile';
 import OurTeam from './pages/about/OurTeam';
 import EasternTibet from './pages/tibetTour/EasternTibet';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import LhasaCityTour from './pages/tibetTour/LhasaCityTour';
 import KailashKora from './pages/tibetTour/KailashKora';
 import LhasaDayTrip from './pages/tibetTour/LhasaDayTrip';
@@ -69,6 +70,7 @@ function App() {
           <Route path="/testimonial" element={<Testimonial />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Footer/>
       </div>
     </Router>
   );

@@ -66,6 +66,22 @@ export const Theme = createTheme({
       lineHeight: '22px',
       fontFamily: "Raleway",
     },
+    Ftitle: {
+      fontWeight:600,
+      fontStyle: 'normal',
+      color: 'rgb(227, 230, 237)',
+      fontSize: '19px',
+      lineHeight: '32px',
+      fontFamily: "Source Sans Pro, sans-serif",
+    },
+    Fbody: {
+      fontWeight:400,
+      fontStyle: 'normal',
+      color: 'rgb(227, 230, 237)',
+      fontSize: '15px',
+      lineHeight: '26px',
+      fontFamily: "Source Sans Pro, sans-serif",
+    },
     
     // Add more variants as needed
   },
