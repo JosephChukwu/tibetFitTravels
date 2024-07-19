@@ -1,13 +1,18 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Box, Grid, Button, Typography } from '@mui/material';
+import { Box, Grid, Button, Typography, useMediaQuery } from '@mui/material';
+import { useTheme } from "@mui/material/styles";
+
+
 
 const ImageSlider = ({ slides }) => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(handleNextSlide, 3000); // Change slide every 3 seconds
+    const interval = setInterval(handleNextSlide, 3000);
     return () => clearInterval(interval);
   }, [currentSlideIndex]);
 
@@ -50,7 +55,7 @@ const ImageSlider = ({ slides }) => {
                     exit={{ opacity: 0, y: -50 }}
                     transition={{ duration: 1 }}
                   >
-                    <Typography variant="h4" align="center" sx={{ color: '#fff' }}>
+                    <Typography  variant={isSmallScreen ? "h3" : "h4"} align="center" sx={{ color: '#fff' }}>
                       {slide.text}
                     </Typography>
                   </motion.div>
@@ -61,7 +66,7 @@ const ImageSlider = ({ slides }) => {
                     transition={{ duration: 1, delay: 0.5 }}
                     style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}
                   >
-                    <Button variant="contained" color="primary">
+                    <Button variant="contained" sx={{bgcolor: "rgb(3, 195, 234)", color: "white"}}>
                       Click to Begin
                     </Button>
                   </motion.div>

@@ -9,14 +9,16 @@ const Footer = () => {
   return (
     <div 
       style={{ 
-       width: "100vw", 
+       width: "100%", 
         overflowX: "hidden", 
         backgroundColor: '#042a55', 
         color: 'white', 
-        mt: "20vh",
+        marginTop: "15vh",
         position: "relative", 
         alignItems:"center",
         justifyContent: "center",
+        left: 0,
+          right: 0,
       
       }}
     >
@@ -26,7 +28,10 @@ const Footer = () => {
           width: "100%", 
           height: "100%", 
           display: "flex", 
-          flexDirection: { xs: "column", sm: "row" } 
+          flexDirection: { xs: "column", sm: "row" },
+          // position: "absolute",
+          left: 0,
+          right: 0,
         }}
       >
         <Grid 

@@ -17,6 +17,7 @@ import LhasaEBCTour from "../assets/LhasaEBCTour.jpg";
 import LhasaMoutKailash from "../assets/LhasaMoutKailash.jpg";
 import LhasaEasternImg from "../assets/LhasaEasternImg.jpg";
 import LhasaTrekkingImg from "../assets/LhasaTrekkingImg.jpg";
+import Footer from '../components/Footer'
 
 
 
@@ -28,18 +29,20 @@ const Home = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const slides = [
-    { image: bhutanCulturalTour, text: "Bhutan Cultural Tour" },
-    { image: nepalMountain, text: "Nepal Mountain" },
-    { image: TibetFitTravel, text: "Tibet Fit Travel" },
+    { image: bhutanCulturalTour, text: "Bhutan Tour" },
+    { image: nepalMountain, text: "Nepal-Mountain" },
+    { image: TibetFitTravel, text: "Tibet F.I.T Travel" },
     { image: TibetTour, text: "Tibet Tour" },
   ];
 
   return (
+    <>
     <Grid
       sx={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        justifyContent: "center",
         zIndex: -5,
       }}
     >
@@ -195,6 +198,7 @@ const Home = () => {
       </Grid>
 
     </Grid>
+    </>
   );
 };
 
