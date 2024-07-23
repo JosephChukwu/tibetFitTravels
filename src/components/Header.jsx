@@ -105,7 +105,7 @@ const Header = () => {
 
   return (
     <header>
-      <AppBar position="fixed" style={{ backgroundColor: "#0379a9", width: "100vw",zIndex: 1  }}>
+      <AppBar position="fixed" style={{ backgroundColor: "#0379a9", width: "100vw",zIndex: 1 ,color: "white" }}>
         <Toolbar>
           <Grid
             container
@@ -171,16 +171,18 @@ const Header = () => {
             </Grid>
           </Grid>
         </Toolbar>
+        
         <div
-          style={{
-            width: "100%",
-            display: isNestedListVisible ? "block" : "none",
-            backgroundColor: "black",
-            zIndex: "5",
-          }}
-        >
-          {isNestedListVisible && <NestedList />}
-        </div>
+            style={{
+              // width: "100%",
+              // display: isNestedListVisible ? "block" : "none",
+              backgroundColor: "black",
+              // color: "white"
+              // zIndex: "5",
+            }}
+          >
+            {isNestedListVisible && <NestedList />}
+          </div>
       </AppBar>
     </header>
   );

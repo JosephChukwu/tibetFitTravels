@@ -21,7 +21,7 @@ const ImageSlider = ({ slides }) => {
   };
 
   return (
-    <Box sx={{ position: 'relative', width: '100vw', height:{xs: "200px", sm: "500px"}, overflow: 'hidden', marginTop: {xs:"23.7vh", sm: "22.3vh"} }}>
+    <Box sx={{ position: 'relative', width: '100vw', height:{xs: "200px", sm: "500px"}, overflow: 'hidden', marginTop: {xs:"18.5vh", sm: "22.3vh"} }}>
       <AnimatePresence>
         {slides.map((slide, index) => (
           index === currentSlideIndex && (

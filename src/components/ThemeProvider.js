@@ -21,6 +21,15 @@ export const Theme = createTheme({
       fontFamily: 'Raleway, sans-serif',
 
     },
+    hTitle: {
+      fontWeight: 600,
+      fontStyle: 'normal',
+      color: 'rgb(68, 63, 63)',
+      fontSize: '36px',
+      lineHeight: 'normal',
+      fontFamily: 'Raleway, sans-serif',
+
+    },
     h4: {
       fontWeight: 650,
       fontStyle: 'normal',
