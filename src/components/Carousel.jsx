@@ -23,8 +23,11 @@ export const Carousel = ({ data = [] }) => {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      width: {xs: "350px", sm: "820px"},
-      height: {xs: "250px", sm: "620px"}}}>
+      // width: {xs: "350px", sm: "820px"},
+      width: {xs: "85vw", sm: "57vw"},
+      height: {xs: "35vh", sm: "80vh"}}}
+      // height: {xs: "250px", sm: "620px"}}},
+      >
       <BsArrowLeftCircleFill onClick={prevSlide} className="arrow arrow-left" />
       {data.map((item, idx) => {
         return (
