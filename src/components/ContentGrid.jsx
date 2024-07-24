@@ -31,7 +31,7 @@ const ContentGrid = ({ content }) => {
         </Box>
       </Grid>
 
-      <Grid item xs={12} sm={6}>
+      <Grid item xs={12} sm={10}>
       {content[activeTab].map((paragraph, index) => (
         <Typography key={index} variant="body2" paragraph>
           {paragraph}

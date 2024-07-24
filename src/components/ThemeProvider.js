@@ -109,6 +109,22 @@ export const Theme = createTheme({
       lineHeight: '26px',
       fontFamily: "Source Sans Pro, sans-serif",
     },
+    sideT: {
+      fontWeight:600,
+      fontStyle: 'normal',
+      color: 'rgb(68, 63, 63)',
+      fontSize: '16px',
+      lineHeight: 'normal',
+      fontFamily: 'Raleway, sans-serif',
+    },
+    sideTt: {
+      fontWeight:400,
+      fontStyle: 'normal',
+      color: 'rgb(118, 118, 118)',
+      fontSize: '15px',
+      lineHeight: '26px',
+      fontFamily: "Source Sans Pro, sans-serif",
+    },
     
     // Add more variants as needed
   },
