@@ -18,14 +18,16 @@ export const Carousel = ({ data = [] }) => {
     setSlide(slide === 0 ? data.length - 1 : slide - 1);
   };
 
+
+
   return (
     <Grid sx={{ position: "relative",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
       // width: {xs: "350px", sm: "820px"},
-      width: {xs: "85vw", sm: "57vw"},
-      height: {xs: "35vh", sm: "80vh"}}}
+      width: {xs: "80vw", sm: "57vw"},
+      height: {xs: "32vh", sm: "80vh"}}}
       // height: {xs: "250px", sm: "620px"}}},
       >
       <BsArrowLeftCircleFill onClick={prevSlide} className="arrow arrow-left" />

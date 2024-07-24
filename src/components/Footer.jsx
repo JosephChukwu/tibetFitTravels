@@ -75,7 +75,7 @@ const Footer = () => {
                 <Typography variant='Fbody'>E-mail: 30221738899@qq.com</Typography>
                 <Typography variant='Fbody'>E-mail: tibetfit2024@gmail.com</Typography>
                 <Typography variant='Fbody'>E-mail: fitsamdup@yahoo.com</Typography>
-                <Typography variant='Fbody'>Website: www.tibetfit.com</Typography>
+                <Typography variant='Fbody'>Website: www.tibetfittravels.com</Typography>
               </Grid>
             </Grid>
           </Grid>

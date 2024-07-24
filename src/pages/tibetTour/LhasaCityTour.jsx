@@ -93,7 +93,7 @@ const LhasaCityTour = () => {
 
      {/*rightA grid */}
     <Grid style={{marginTop: "20vh",display: "flex",flexDirection: "column", justifyContent: "center",}}>
-    <Typography variant="hTitle" sx={{ my: "10vh", textAlign: "left" }}>
+    <Typography variant="hTitle" sx={{ my: {xs: "10vh", sm: "15vh"}, textAlign: "left" }}>
             Lhasa city tour
           </Typography>
          <Carousel data={slides} />
