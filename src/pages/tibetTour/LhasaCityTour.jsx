@@ -88,7 +88,7 @@ const LhasaCityTour = () => {
   return (
     <main>
      {/*main grid */}
-    <Grid container sx={{paddingX: { xs: "30px", sm: "90px" },width: "100%", display: "flex", flexDirection: {xs: "column", sm: "row"}, gap:{xs: 0, sm: 8}}}>
+    <Grid container sx={{paddingX: { xs: "30px", sm: "100px" },width: "100%", display: "flex", flexDirection: {xs: "column", sm: "row"}, gap:{xs: 0, sm: 8}}}>
 
  {/*right grid */}
     <Grid item xs={12} sm={8}>

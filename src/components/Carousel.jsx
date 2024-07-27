@@ -27,7 +27,8 @@ export const Carousel = ({ data = [] }) => {
       alignItems: "center",
       // width: {xs: "350px", sm: "820px"},
       width: {xs: "80vw", sm: "57vw"},
-      height: "auto" }}
+      height: "auto" 
+    }}
       // height: {xs: "250px", sm: "620px"}}},
       >
       <BsArrowLeftCircleFill onClick={prevSlide} className="arrow arrow-left" />
