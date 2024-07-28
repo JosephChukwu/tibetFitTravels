@@ -22,7 +22,8 @@ const AboutUs = () => {
      {/*rightA grid */}
     <Grid style={{marginTop: "20vh",display: "flex",flexDirection: "column", justifyContent: "center",}}>
     <Typography variant="hTitle" sx={{ my: {xs: "10vh", sm: "10vh"}, textAlign: "left" }}>
-    River Rafting
+    About Us
+
           </Typography>
           <img src={mainHomeImg} alt="RiverRaftingImg" style={{height: "auto", width: "100%"}} />
           </Grid>
