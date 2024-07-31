@@ -36,7 +36,7 @@ const dropIn = {
 
 
 
-const ContactModal = ({handleClose, text}) => {
+const ContactModal = ({handleClose, text, modalOpen}) => {
   return (
     <Backdrop onClick={handleClose}>
     <MotionGrid 

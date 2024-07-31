@@ -1,9 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useTheme } from "@mui/material/styles";
 import { Box, Grid, Typography } from "@mui/material";
 import { Link } from 'react-router-dom';
+import ContactModal from "./ContactModal";
+import { motion, AnimatePresence } from "framer-motion";
+
+
 
 const Footer = () => {
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const open = () => {
+    console.log("Open modal triggered");
+
+    setModalOpen(true);}
+
+  const close = () => {
+    setModalOpen(false)};
+
+
+
   const theme = useTheme();
 
   return (
@@ -22,6 +38,16 @@ const Footer = () => {
       
       }}
     >
+
+    <AnimatePresence 
+        initial={false}
+        // exitBeforeEnter={true}
+        onExitComplete={() => null}
+        mode="wait"
+        >
+        {modalOpen && <ContactModal modalOpen={modalOpen} handleClose={close}/>}
+        </AnimatePresence>
+
       <Grid 
         container 
         sx={{ 
@@ -47,7 +73,7 @@ const Footer = () => {
             <Grid sx={{ mt: "2vh", display: "flex", flexDirection: "column" }}>
               <Typography component={Link} to='/OurTeam' variant='Fbody' sx={{ textDecoration: "none" }}>Our Team</Typography>
               <Typography component={Link} to='/CompanyProfile' variant='Fbody' sx={{ textDecoration: "none" }}>Company Profile</Typography>
-              <Typography component={Link} to='/Contact' variant='Fbody' sx={{ textDecoration: "none" }}>Contact</Typography>
+              <Typography component="button" onClick={() => (modalOpen ? close() : open())} variant='Fbody' sx={{ textDecoration: "none", border: "none", backgroundColor: "inherit",textAlign: "left"}}>Contact</Typography>
             </Grid>
           </Grid>
         </Grid>

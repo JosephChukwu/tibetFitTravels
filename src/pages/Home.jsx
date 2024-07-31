@@ -17,6 +17,9 @@ import LhasaEBCTour from "../assets/LhasaEBCTour.jpg";
 import LhasaMoutKailash from "../assets/LhasaMoutKailash.jpg";
 import LhasaEasternImg from "../assets/LhasaEasternImg.jpg";
 import LhasaTrekkingImg from "../assets/LhasaTrekkingImg.jpg";
+import ContactModal from "../components/ContactModal";
+import { motion, AnimatePresence } from "framer-motion";
+
 
 
 
@@ -25,6 +28,15 @@ import LhasaTrekkingImg from "../assets/LhasaTrekkingImg.jpg";
 
 
 const Home = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const open = () => {
+    console.log("Open modal triggered");
+
+    setModalOpen(true);}
+
+  const close = () => {
+    setModalOpen(false)};
+  
 
 
   const theme = useTheme();
@@ -48,7 +60,7 @@ const Home = () => {
         zIndex: -5,
       }}
     >
-      <ImageSlider slides={slides} />
+      <ImageSlider slides={slides} open={open}/>
 
             {/*grid 1 */}
       <Grid
@@ -198,6 +210,16 @@ const Home = () => {
           </Grid>
           </Grid>
       </Grid>
+
+      <AnimatePresence
+      initial={false}
+       onExitComplete={() => null}
+      mode="wait"
+      >
+      {modalOpen && <ContactModal modalOpen={modalOpen} handleClose={close}/>}
+
+      
+      </AnimatePresence>
 
     </Grid>
     </>

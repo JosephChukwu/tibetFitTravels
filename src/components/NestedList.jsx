@@ -8,10 +8,24 @@ import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import { useNavigate, Link } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
+import ContactModal from "./ContactModal";
+import { motion, AnimatePresence } from "framer-motion";
 
-export default function NestedList({ handleLinkClick }) {
+
+
+
+
+export default function NestedList({ handleLinkClick,open, close}) {
+
+
+
+
+  
+  
+
+
   const theme = useTheme();
-  const [open, setOpen] = React.useState(true);
+  const [openn, setOpen] = React.useState(true);
   const [nestedOpen, setNestedOpen] = React.useState(false);
   const [nestedOpen2, setNestedOpen2] = React.useState(false);
   const [nestedOpen3, setNestedOpen3] = React.useState(false);
@@ -42,7 +56,7 @@ export default function NestedList({ handleLinkClick }) {
 
   return (
     <Collapse
-      in={open}
+      in={openn}
       timeout="auto"
       unmountOnExit
       sx={{ color: "white", maxHeight: "500px" }}
@@ -165,6 +179,9 @@ export default function NestedList({ handleLinkClick }) {
             </ListItemButton>
           </List>
         </Collapse>
+        <ListItemButton   sx={{ color: "white",border:'none'}} onClick={() => {open(), handleLinkClick()}}>
+          <ListItemText primary="Contact" sx={{ color: "white"}} />
+        </ListItemButton>
         <ListItemButton component={Link} to="/Testimonial" sx={{ color: "white"}} onClick={handleLinkClick}>
           <ListItemText primary="Testimonial" sx={{ color: (theme) => theme.palette.primary.main }} />
         </ListItemButton>

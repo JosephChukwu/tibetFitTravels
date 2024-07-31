@@ -1,12 +1,14 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Box, Grid, Button, Typography, useMediaQuery } from '@mui/material';
 import { useTheme } from "@mui/material/styles";
+import ContactModal from "./ContactModal";
 
 
 
-const ImageSlider = ({ slides }) => {
+const ImageSlider = ({ slides, open }) => {
+
+
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -22,7 +24,11 @@ const ImageSlider = ({ slides }) => {
 
   return (
     <Box sx={{ position: 'relative', width: '100vw', height:{xs: "200px", sm: "500px"}, overflow: 'hidden', marginTop: {xs:"18.5vh", sm: "22.3vh"} }}>
-      <AnimatePresence>
+      <AnimatePresence
+      initial={false}
+       onExitComplete={() => null}
+      mode="wait"
+      >
         {slides.map((slide, index) => (
           index === currentSlideIndex && (
             <React.Fragment key={index}>
@@ -32,7 +38,7 @@ const ImageSlider = ({ slides }) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.5 }}
                 style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
               />
               <Grid
@@ -53,7 +59,7 @@ const ImageSlider = ({ slides }) => {
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -50 }}
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 0.5 }}
                   >
                     <Typography  variant={isSmallScreen ? "h3" : "h4"} align="center" sx={{ color: '#fff' }}>
                       {slide.text}
@@ -63,10 +69,10 @@ const ImageSlider = ({ slides }) => {
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -50 }}
-                    transition={{ duration: 1, delay: 0.5 }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
                     style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}
                   >
-                    <Button variant="contained" sx={{bgcolor: "rgb(3, 195, 234)", color: "white"}}>
+                    <Button variant="contained" onClick={open} sx={{bgcolor: "rgb(3, 195, 234)", color: "white"}}>
                       Click to Begin
                     </Button>
                   </motion.div>
@@ -75,8 +81,11 @@ const ImageSlider = ({ slides }) => {
             </React.Fragment>
           )
         ))}
+
       </AnimatePresence>
+    
     </Box>
+   
   );
 };
 

@@ -97,8 +97,14 @@ const bhutan = [
 const Header = () => {
 
   const [modalOpen, setModalOpen] = useState(false);
-  const open = () => setModalOpen(true);
-  const close = () => setModalOpen(false);
+  const open = () => {
+    console.log("Open modal triggered");
+
+    setModalOpen(true);}
+
+  const close = () => {
+    setModalOpen(false)};
+
 
   const [isNestedListVisible, setIsNestedListVisible] = useState(false);
   const theme = useTheme();
@@ -192,7 +198,7 @@ const Header = () => {
               <Typography component="button" onClick={() => (modalOpen ? close() : open())}  sx={typographySx}>
                 Contact
               </Typography>
-              <AnimatePresence 
+             {/*  <AnimatePresence 
               initial={false}
               // exitBeforeEnter={true}
               onExitComplete={() => null}
@@ -200,12 +206,21 @@ const Header = () => {
               >
               {modalOpen && <ContactModal modalOpen={modalOpen} handleClose={close}/>}
               </AnimatePresence>
+              */}
             </Grid>
           </Grid>
         </Toolbar>
+        <AnimatePresence 
+        initial={false}
+        // exitBeforeEnter={true}
+        onExitComplete={() => null}
+        mode="wait"
+        >
+        {modalOpen && <ContactModal modalOpen={modalOpen} handleClose={close}/>}
+        </AnimatePresence>
 
         <div style={{ backgroundColor: "black" }}>
-          {isNestedListVisible && <NestedList handleLinkClick={handleLinkClick} />}
+          {isNestedListVisible && <NestedList handleLinkClick={handleLinkClick} open={open} close={close}/>}
         </div>
       </AppBar>
     </header>
