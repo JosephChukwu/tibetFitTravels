@@ -51,7 +51,7 @@ function App() {
           <Route path="/lhasaKailash" element={<LhasaKailash />} />
           <Route path="/springTibet" element={<SpringTibet />} />
           <Route path="/tibetTrekking" element={<TibetTrekking />} />
-          <Route path="/kailashLhasa" element={<KailashLhasa />} />
+          <Route path="/kailashLhasa" element={<LhasaKailash />} />
 
           <Route path="/specialKhamTour" element={<SpecialKhamTour />} />
           <Route path="/amdoCultural" element={<AmdoCultural />} />

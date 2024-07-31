@@ -68,14 +68,11 @@ const Footer = () => {
               <Typography variant='Fbody'>P.O.Box 850000</Typography>
               <Typography variant='Fbody' sx={{ mt: "2vh" }}>Contact Person</Typography>
               <Typography variant='Fbody'>Mr. Lhakpa Tsering or Mr. SAMDUP</Typography>
-              <Typography variant='Fbody'>Tel: 0086-891- 6349239</Typography>
-              <Typography variant='Fbody'>Fax: 0086-891- 6363825</Typography>
-              <Typography variant='Fbody'>Mobile / wechat: 0086-891- 13989011658</Typography>
+              <Typography variant='Fbody'>Tel: 0086-801- 7450160</Typography>
+              <Typography variant='Fbody'>Fax: 0086-801- 7450160</Typography>
               <Grid sx={{ gap: "2vh", display: "flex", flexDirection: "column", mt: "2vh" }}>
-                <Typography variant='Fbody'>E-mail: 30221738899@qq.com</Typography>
-                <Typography variant='Fbody'>E-mail: tibetfit2024@gmail.com</Typography>
-                <Typography variant='Fbody'>E-mail: fitsamdup@yahoo.com</Typography>
-                <Typography variant='Fbody'>Website: www.tibetfittravels.com</Typography>
+              <Typography variant='Fbody'>E-mail: <a href="mailto:tibetfitt2024@hotmail.com" style={{ color: 'white', textDecoration: 'none' }}>tibetfitt2024@hotmail.com</a></Typography>
+              <Typography variant='Fbody' component={Link} to='https://tibetfittravels.com/' sx={{ textDecoration: "none" }}>Website: www.tibetfittravels.com</Typography>
               </Grid>
             </Grid>
           </Grid>

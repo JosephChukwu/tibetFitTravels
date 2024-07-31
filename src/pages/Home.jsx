@@ -1,5 +1,5 @@
 import { Grid, Typography, useMediaQuery } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import ImageSlider from "../components/ImageSlider";
 import bhutanCulturalTour from "../assets/bhutanCulturalTour.jpg";
 import nepalMountain from "../assets/nepalMountain.jpg";
@@ -17,7 +17,7 @@ import LhasaEBCTour from "../assets/LhasaEBCTour.jpg";
 import LhasaMoutKailash from "../assets/LhasaMoutKailash.jpg";
 import LhasaEasternImg from "../assets/LhasaEasternImg.jpg";
 import LhasaTrekkingImg from "../assets/LhasaTrekkingImg.jpg";
-import Footer from '../components/Footer'
+
 
 
 
@@ -25,6 +25,8 @@ import Footer from '../components/Footer'
 
 
 const Home = () => {
+
+
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 

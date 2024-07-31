@@ -9,11 +9,7 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 import { useNavigate, Link } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 
-
-
-
-
-export default function NestedList() {
+export default function NestedList({ handleLinkClick }) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
   const [nestedOpen, setNestedOpen] = React.useState(false);
@@ -52,7 +48,7 @@ export default function NestedList() {
       sx={{ color: "white", maxHeight: "500px" }}
     >
       <List sx={{ width: "100%", overflowY: "auto", maxHeight: "400px", color: "white" }}>
-        <ListItemButton component={Link} to="/" sx={{ color: "white"}}>
+        <ListItemButton component={Link} to="/" sx={{ color: "white"}} onClick={handleLinkClick}>
           <ListItemText primary="Home" sx={{ color: (theme) => theme.palette.primary.main }} />
         </ListItemButton>
         <ListItemButton onClick={handleClick}>
@@ -61,13 +57,13 @@ export default function NestedList() {
         </ListItemButton>
         <Collapse in={nestedOpen} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItemButton sx={{ pl: 4 }} component={Link} to="/AboutUs">
+            <ListItemButton sx={{ pl: 4 }} component={Link} to="/AboutUs" onClick={handleLinkClick}>
               <ListItemText primary="About Us" sx={textStyle} />
             </ListItemButton>
-            <ListItemButton sx={{ pl: 4 }} component={Link} to="/CompanyProfile">
+            <ListItemButton sx={{ pl: 4 }} component={Link} to="/CompanyProfile" onClick={handleLinkClick}>
               <ListItemText primary="Company Profile" sx={textStyle} />
             </ListItemButton>
-            <ListItemButton sx={{ pl: 4 }} component={Link} to="/OurTeam">
+            <ListItemButton sx={{ pl: 4 }} component={Link} to="/OurTeam" onClick={handleLinkClick}>
               <ListItemText primary="Our Team" sx={textStyle} />
             </ListItemButton>
           </List>
@@ -78,34 +74,34 @@ export default function NestedList() {
         </ListItemButton>
         <Collapse in={nestedOpen2} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItemButton sx={{ pl: 4, }} component={Link} to="/LhasaCityTour">
+            <ListItemButton sx={{ pl: 4, }} component={Link} to="/LhasaCityTour" onClick={handleLinkClick}>
               <ListItemText primary="Lhasa city tour" sx={textStyle} />
             </ListItemButton>
-            <ListItemButton sx={{ pl: 4 }} component={Link} to="/LhasaDayTrip">
+            <ListItemButton sx={{ pl: 4 }} component={Link} to="/LhasaDayTrip" onClick={handleLinkClick}>
               <ListItemText primary="Lhasa day trip" sx={textStyle} />
             </ListItemButton>
-            <ListItemButton sx={{ pl: 4 }} component={Link} to="/LhasaEverestBase">
+            <ListItemButton sx={{ pl: 4 }} component={Link} to="/LhasaEverestBase" onClick={handleLinkClick}>
               <ListItemText primary="Lhasa to Everest Base Camp Tour" sx={textStyle} />
             </ListItemButton>
-            <ListItemButton sx={{ pl: 4 }} component={Link} to="/LhasaKailash">
+            <ListItemButton sx={{ pl: 4 }} component={Link} to="/LhasaKailash" onClick={handleLinkClick}>
               <ListItemText primary="Lhasa to Mt Kailash trips" sx={textStyle} />
             </ListItemButton>
-            <ListItemButton sx={{ pl: 4 }} component={Link} to="/EasternTibet">
+            <ListItemButton sx={{ pl: 4 }} component={Link} to="/EasternTibet" onClick={handleLinkClick}>
               <ListItemText primary="Eastern Tibet tour" sx={textStyle} />
             </ListItemButton>
-            <ListItemButton sx={{ pl: 4 }} component={Link} to="/TibetTrekking">
+            <ListItemButton sx={{ pl: 4 }} component={Link} to="/TibetTrekking" onClick={handleLinkClick}>
               <ListItemText primary="Tibet trekking" sx={textStyle} />
             </ListItemButton>
-            <ListItemButton sx={{ pl: 4 }} component={Link} to="/SpringTibet">
+            <ListItemButton sx={{ pl: 4 }} component={Link} to="/SpringTibet" onClick={handleLinkClick}>
               <ListItemText primary="Spring Tibet Tour" sx={textStyle} />
             </ListItemButton>
-            <ListItemButton sx={{ pl: 4 }} component={Link} to="/LhasaEverestNmatso">
+            <ListItemButton sx={{ pl: 4 }} component={Link} to="/LhasaEverestNmatso" onClick={handleLinkClick}>
               <ListItemText primary="Lhasa Everest Namtso Lake Tour" sx={textStyle} />
             </ListItemButton>
-            <ListItemButton sx={{ pl: 4 }} component={Link} to="/KailashKora">
+            <ListItemButton sx={{ pl: 4 }} component={Link} to="/KailashKora" onClick={handleLinkClick}>
               <ListItemText primary="Kailash Kora Tour" sx={textStyle} />
             </ListItemButton>
-            <ListItemButton sx={{ pl: 4 }} component={Link} to="/KailashLhasa">
+            <ListItemButton sx={{ pl: 4 }} component={Link} to="/KailashLhasa" onClick={handleLinkClick}>
               <ListItemText primary="Kailash-Lhasa Tour" sx={textStyle} />
             </ListItemButton>
           </List>
@@ -116,10 +112,10 @@ export default function NestedList() {
         </ListItemButton>
         <Collapse in={nestedOpen3} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItemButton sx={{ pl: 4 }} component={Link} to="/SpecialKhamTour">
+            <ListItemButton sx={{ pl: 4 }} component={Link} to="/SpecialKhamTour" onClick={handleLinkClick}>
               <ListItemText primary="Special Kham Tour" sx={textStyle} />
             </ListItemButton>
-            <ListItemButton sx={{ pl: 4 }} component={Link} to="/AmdoCultural">
+            <ListItemButton sx={{ pl: 4 }} component={Link} to="/AmdoCultural" onClick={handleLinkClick}>
               <ListItemText primary="Amdo Cultural Tour" sx={textStyle} />
             </ListItemButton>
           </List>
@@ -136,30 +132,24 @@ export default function NestedList() {
             </ListItemButton>
             <Collapse in={nestedOpen4a} timeout="auto" unmountOnExit>
               <List component="div" disablePadding>
-                <ListItemButton sx={{ pl: 4 }} component={Link} to="/AnapurnaBase">
+                <ListItemButton sx={{ pl: 4 }} component={Link} to="/AnapurnaBase" onClick={handleLinkClick}>
                   <ListItemText primary="Annapurna Base Camp" sx={textStyle} />
                 </ListItemButton>
-                <ListItemButton sx={{ pl: 4 }} component={Link} to="/LhasaDayTrip">
+                <ListItemButton sx={{ pl: 4 }} component={Link} to="/LhasaDayTrip" onClick={handleLinkClick}>
                   <ListItemText primary="Lhasa day trip" sx={textStyle} />
                 </ListItemButton>
-                <ListItemButton sx={{ pl: 4 }} component={Link} to="/MustangTrek">
+                <ListItemButton sx={{ pl: 4 }} component={Link} to="/MustangTrek" onClick={handleLinkClick}>
                   <ListItemText primary="Mustang Trek" sx={textStyle} />
                 </ListItemButton>
-                <ListItemButton sx={{ pl: 4 }} component={Link} to="/LangtangGosainkunda">
+                <ListItemButton sx={{ pl: 4 }} component={Link} to="/LangtangGosainkunda" onClick={handleLinkClick}>
                   <ListItemText primary="Langtang-Gosainkunda" sx={textStyle} />
                 </ListItemButton>
               </List>
             </Collapse>
-            <ListItemButton sx={{ pl: 4 }} component={Link} to="/KathmanduValley">
-              <ListItemText primary="Kathmandu Valley Tour" sx={textStyle} />
+            <ListItemButton sx={{ pl: 4 }} component={Link} to="/KathmanduValley" onClick={handleLinkClick}>
+              <ListItemText primary="Kathmandu Valley" sx={textStyle} />
             </ListItemButton>
-            <ListItemButton sx={{ pl: 4 }} component={Link} to="/Pokhara">
-              <ListItemText primary="Pokhara Tour" sx={textStyle} />
-            </ListItemButton>
-            <ListItemButton sx={{ pl: 4 }} component={Link} to="/RiverRafting">
-              <ListItemText primary="River Rafting" sx={textStyle} />
-            </ListItemButton>
-            <ListItemButton sx={{ pl: 4 }} component={Link} to="/JungleSafari">
+            <ListItemButton sx={{ pl: 4 }} component={Link} to="/JungleSafari" onClick={handleLinkClick}>
               <ListItemText primary="Jungle Safari" sx={textStyle} />
             </ListItemButton>
           </List>
@@ -170,16 +160,13 @@ export default function NestedList() {
         </ListItemButton>
         <Collapse in={nestedOpen5} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItemButton sx={{ pl: 4 }} component={Link} to="/Bhutancultural">
+            <ListItemButton sx={{ pl: 4 }} component={Link} to="/BhutanCultural" onClick={handleLinkClick}>
               <ListItemText primary="Bhutan Cultural Tour" sx={textStyle} />
             </ListItemButton>
           </List>
         </Collapse>
-        <ListItemButton component={Link} to="/Testimonial">
-          <ListItemText primary="Testimonial" sx={textStyle} />
-        </ListItemButton>
-        <ListItemButton component={Link} to="/Contact">
-          <ListItemText primary="Contact" sx={textStyle} />
+        <ListItemButton component={Link} to="/Testimonial" sx={{ color: "white"}} onClick={handleLinkClick}>
+          <ListItemText primary="Testimonial" sx={{ color: (theme) => theme.palette.primary.main }} />
         </ListItemButton>
       </List>
     </Collapse>
