@@ -25,9 +25,6 @@ const ImageSlider = ({ slides, open }) => {
   return (
     <Box sx={{ position: 'relative', width: '100vw', height:{xs: "200px", sm: "500px"}, overflow: 'hidden', marginTop: {xs:"18.5vh", sm: "22.3vh"} }}>
       <AnimatePresence
-      initial={false}
-       onExitComplete={() => null}
-      mode="wait"
       >
         {slides.map((slide, index) => (
           index === currentSlideIndex && (
@@ -59,7 +56,7 @@ const ImageSlider = ({ slides, open }) => {
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -50 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 1 }}
                   >
                     <Typography  variant={isSmallScreen ? "h3" : "h4"} align="center" sx={{ color: '#fff' }}>
                       {slide.text}
@@ -69,7 +66,7 @@ const ImageSlider = ({ slides, open }) => {
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -50 }}
-                    transition={{ duration: 0.5, delay: 0.5 }}
+                    transition={{ duration: 1, delay: 0.1 }}
                     style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}
                   >
                     <Button variant="contained" onClick={open} sx={{bgcolor: "rgb(3, 195, 234)", color: "white"}}>

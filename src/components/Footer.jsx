@@ -39,14 +39,7 @@ const Footer = () => {
       }}
     >
 
-    <AnimatePresence 
-        initial={false}
-        // exitBeforeEnter={true}
-        onExitComplete={() => null}
-        mode="wait"
-        >
-        {modalOpen && <ContactModal modalOpen={modalOpen} handleClose={close}/>}
-        </AnimatePresence>
+    
 
       <Grid 
         container 
@@ -97,7 +90,7 @@ const Footer = () => {
               <Typography variant='Fbody'>Tel: 0086-801- 7450160</Typography>
               <Typography variant='Fbody'>Fax: 0086-801- 7450160</Typography>
               <Grid sx={{ gap: "2vh", display: "flex", flexDirection: "column", mt: "2vh" }}>
-              <Typography variant='Fbody'>E-mail: <a href="mailto:tibetfitt2024@hotmail.com" style={{ color: 'white', textDecoration: 'none' }}>tibetfitt2024@hotmail.com</a></Typography>
+              <Typography variant='Fbody'>E-mail: <a href="mailto:tibetfit2024@hotmail.com" style={{ color: 'white', textDecoration: 'none' }}>tibetfit2024@hotmail.com</a></Typography>
               <Typography variant='Fbody' component={Link} to='https://tibetfittravels.com/' sx={{ textDecoration: "none" }}>Website: www.tibetfittravels.com</Typography>
               </Grid>
             </Grid>
@@ -121,6 +114,15 @@ const Footer = () => {
           <Typography component={Link} to='/EasternTibet' variant='Fbody' sx={{ textDecoration: "none" }}>Eastern Tibet tour</Typography>
         </Grid>
       </Grid>
+
+      <AnimatePresence 
+        initial={false}
+        // exitBeforeEnter={true}
+        onExitComplete={() => null}
+        mode="wait"
+        >
+        {modalOpen && <ContactModal modalOpen={modalOpen} handleClose={close}/>}
+        </AnimatePresence>
     </div>
   )
 }
