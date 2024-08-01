@@ -64,7 +64,7 @@ const ContactModal = ({ handleClose }) => {
         onClick={(e) => e.stopPropagation()}
         sx={{
           width: "70%",
-          height: "80%",
+          height: "auto",
           padding: "0.5rem",
           margin: "auto",
           borderRadius: "12px",
@@ -72,7 +72,7 @@ const ContactModal = ({ handleClose }) => {
           flexDirection: "column",
           alignItems: "center",
           color: "white",
-          backgroundColor: "#042a55"
+          backgroundColor: "#f4f4f4"
         }}
         variants={dropIn}
         initial="hidden"
@@ -123,6 +123,20 @@ const ContactModal = ({ handleClose }) => {
             helperText={formik.touched.message && formik.errors.message}
             fullWidth
             margin="normal"
+            sx={{
+              // '& .MuiInputBase-input': {
+              //   color: 'white', // Change text color
+              //   '::placeholder': {
+              //     color: 'grey', // Change placeholder color
+              //   },
+              // },
+              // '& .MuiInputLabel-root': {
+              //   color: 'white', // Change label color
+              // },
+              // '& .MuiInput-underline:after': {
+              //   borderBottomColor: 'white', // Change underline color
+              // },
+            }}
           />
           <Button type="submit" variant="contained" color="primary">
             Submit
@@ -134,3 +148,7 @@ const ContactModal = ({ handleClose }) => {
 }
 
 export default ContactModal;
+
+
+// google sheets link
+// https://docs.google.com/spreadsheets/d/1Wh01878HSAKjnW2cnyB2zyuwbHxIzbiM49UpMF_l8SY/edit?usp=sharing
